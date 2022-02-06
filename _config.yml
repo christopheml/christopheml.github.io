@@ -18,43 +18,61 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: "0xAFFFF"
-email: christophe.michel@hey.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Personal tech blog of Christophe MICHEL
-  Paris-based software developer
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://christopheml.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: christopheml
-github_username:  christopheml
-repository: christopheml.github.io
-
-show_downloads: false
-
+# Theme configuration
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "dark"
+
+# Site configuration
+title: "0xAFFFF"
+subtitle: "Le gars qui n'est pas devenu chef de projet pour évoluer"
+title_separator: "|"
+name: "Christophe Michel"
+site.locale: "fr-FR"
+description: >-
+  Blog personnel technique de Christophe Michel.
+  Développeur logiciel basé à Paris, France.
+baseurl: ""
+author:
+  name: "Christophe Michel"
+  avatar: "/assets/images/me.jpg"
+  bio: "Développeur half-stack"
+  location: "Paris, France"
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/christopheml"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/christopheml"
+locale: "fr-FR"
+
+# Github Specific
+url: "https://christopheml.github.io"
+repository: "christopheml/christopheml.github.io"
+github_username: christopheml
 
 # Build settings
 plugins:
-  - jekyll-feed
   - jekyll-include-cache
   - jekyll-remote-theme
+  - jekyll-feed
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+include: ["_pages"]
+permalink: /:year/:month/:day/:title
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      show_date: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
